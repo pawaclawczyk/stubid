@@ -1,7 +1,10 @@
 package main
 
 import (
+	"encoding/json"
+	"github.com/prebid/openrtb/v19/openrtb2"
 	"github.com/valyala/fasthttp"
+	"github.com/valyala/fastjson"
 	"log"
 )
 
@@ -21,7 +24,47 @@ func xandrBidderHandler(ctx *fasthttp.RequestCtx) {
 	// todo: decode bid request
 	// todo: respond with dummy bid response or dummy no bid response
 	// todo: track request
-	ctx.SetStatusCode(fasthttp.StatusNoContent)
+	req, err := fastjson.ParseBytes(ctx.PostBody())
+	if err != nil {
+		log.Printf("xandrBidderHandler: error in parsing bid request: %v", err)
+		ctx.Error("internal error", fasthttp.StatusInternalServerError)
+		return
+	}
+	if len(ctx.Request.Header.Peek("stubid-no-bid")) > 0 {
+		log.Println("xandrBidderHandler: testing: enforcing no bid response")
+		ctx.SetStatusCode(fasthttp.StatusNoContent)
+		return
+	}
+	// todo: replace static dummy bid response with internal auction and bid response builder
+	res := openrtb2.BidResponse{
+		ID: string(req.GetStringBytes("id")),
+		SeatBid: []openrtb2.SeatBid{
+			{
+				Bid: []openrtb2.Bid{
+					{
+						ID:    "bid-123",
+						ImpID: string(req.GetStringBytes("imp", "0", "id")),
+						Price: 1.23,
+						AdID:  "xandr-creative-id-123",
+						NURL:  "localhost:8080/rtb/notice/win",
+						LURL:  "localhost:8080/rtb/notice/loss",
+						CID:   "campaign-id-123",
+					},
+				},
+				Seat: "xandr-member-id-123",
+			},
+		},
+		BidID: "bid-response-123",
+		Cur:   "USD",
+	}
+	bRes, err := json.Marshal(res)
+	if err != nil {
+		log.Printf("xandrBidderHandler: error in encoding bid response: %v", err)
+		ctx.Error("internal error", fasthttp.StatusInternalServerError)
+		return
+	}
+	ctx.SetContentType("application/json")
+	ctx.SetBody(bRes)
 }
 
 func xandrNotifyHandler(ctx *fasthttp.RequestCtx) {

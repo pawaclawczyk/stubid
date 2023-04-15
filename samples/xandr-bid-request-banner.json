@@ -1,0 +1,161 @@
+{
+  "id": "8765482113786061111",
+  "imp": [
+    {
+      "id": "7654319310942953333",
+      "banner": {
+        "w": 320,
+        "h": 50,
+        "id": "1",
+        "battr": [
+          1,
+          2,
+          15
+        ],
+        "pos": 0,
+        "format": [
+          {
+            "w": 320,
+            "h": 50
+          }
+        ]
+      },
+      "instl": 0,
+      "tagid": "12347654",
+      "secure": 1,
+      "ext": {
+        "appnexus": {
+          "estimated_clear_price": 0.57,
+          "predicted_view_rate": 0.073255,
+          "member_ad_profile_id": 1111055,
+          "predicted_video_completion_rate": 0.592172,
+          "predicted_view_rate_over_total": 0.067229,
+          "allowed_payment_types": [
+            {
+              "payment_type": 1,
+              "imp_count_method": 2
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "site": {
+    "id": "3232399",
+    "domain": "example.com",
+    "cat": [
+      "IAB12-2",
+      "IAB12",
+      "IAB11-5"
+    ],
+    "page": "https://example.com/somepage.html",
+    "publisher": {
+      "id": "1111999"
+    }
+  },
+  "device": {
+    "ua": "Mozilla/5.0 (Linux; Android 6.0.1; HUAWEI Build/MMB28B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.137 Mobile Safari/537.36",
+    "geo": {
+      "lat": 36.6203,
+      "lon": -4.4998,
+      "country": "ESP",
+      "region": "MA",
+      "metro": "1",
+      "city": "UnaCuidad",
+      "zip": "11111",
+      "utcoffset": 60,
+      "ext": {
+        "appnexus": {
+          "timezone": "Africa/Ceuta"
+        }
+      }
+    },
+    "dnt": 0,
+    "ip": "11.222.111.0",
+    "devicetype": 4,
+    "make": "Unknown",
+    "model": "Generic Android Mobile",
+    "os": "Android",
+    "language": "es",
+    "connectiontype": 0
+  },
+  "user": {
+    "id": "7939999668795769876",
+    "buyeruid": "CABBBBrbuQ9AA5DMJJJJlOL9ZOo",
+    "gender": "O",
+    "data": [
+      {
+        "id": "0",
+        "segment": [
+          {
+            "id": "1",
+            "value": "0"
+          }
+        ]
+      },
+      {
+        "id": "1234",
+        "segment": [
+          {
+            "id": "4444555",
+            "value": "0"
+          }
+        ]
+      }
+    ],
+    "ext": {
+      "appnexus": {
+        "userdata_json": "{\"uid\":\"CABBBBrbuQ9AA5DMJJJJlOL9ZOo\"}"
+      }
+    }
+  },
+  "test": 0,
+  "at": 1,
+  "tmax": 150,
+  "wseat": [
+    "1234",
+    "9988"
+  ],
+  "cur": [
+    "USD"
+  ],
+  "bcat": [
+    "IAB23-7",
+    "IAB23-5",
+    "IAB23-10",
+    "IAB23-9",
+    "IAB23-1",
+    "IAB7-44",
+    "IAB9-9",
+    "IAB8-18",
+    "IAB8-5"
+  ],
+  "badv": [
+    "url1.com",
+    "url2.com"
+  ],
+  "ext": {
+    "appnexus": {
+      "seller_member_id": 123,
+      "publisher_integration": {
+        "is_header": 0
+      }
+    },
+    "schain": {
+      "complete": 1,
+      "nodes": [
+        {
+          "asi": "appnexus.com",
+          "sid": "123",
+          "rid": "2dd111ff-7777-4abc-8558-86a123ab46d6",
+          "hp": 1
+        }
+      ],
+      "ver": "1.0"
+    }
+  },
+  "source": {
+    "fd": 1,
+    "tid": "2dd111ff-7777-4abc-8558-86a123ab46d6"
+  }
+}
